@@ -1,0 +1,27 @@
+.flexbox1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sizeImg {
+    height: 40px;
+}
+
+.logoInstagram {
+    background: url('../img/logoInstagram.png');
+    height: 51px;
+    width: 175px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+input {
+    width: 258px;
+    height: 36px;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin: 0 40px 6px;
+}
