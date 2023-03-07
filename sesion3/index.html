@@ -1,110 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 
 <body>
     <section class="flexbox1">
-        <div>
-            <img src="assets/img/screenshot1.png" alt="imagenCelular">
-            <!-- <img src="assets/img/screenshot2.png" alt="imagenCelular">
-            <img src="assets/img/screenshot3.png" alt="imagenCelular">
-            <img src="assets/img/screenshot4.png" alt="imagenCelular"> -->
+        <div class="fondoTelefono">
+            <img src="assets/img/slider1.png" class="imgSlider" alt="">
         </div>
-        <div>
-            <form>
-                <div class="logoInstagram"></div>
-                <div>
-                    <!-- <label for="usuario">Teléfono, usuario o correo electrónico</label> -->
-                    <input type="text" id="usuario" placeholder="Teléfono, usuario o correo electrónico">
+
+
+        <div class="cajaUsuario">
+            <section class="cajaFormulario">
+                <!-- logo -->
+                <div class="caja1U">
+                    <img src="assets/img/logoInstagram.png" id="logoInstagram" alt="">
                 </div>
+                <!-- logo -->
+
+
+
+                <!-- formulario -->
                 <div>
-                    <!-- <label for="pass">Contraseña</label> -->
-                    <input type="password" id="pass" placeholder="Contraseña">
+                    <form>
+                        <div class="contenedorInputs">
+                            <input type="text" placeholder="Teléfono, usuario o correo electrónico">
+                        </div>
+                        <div class="contenedorInputs">
+                            <input type="password" placeholder="Contraseña">
+                        </div>
+                        <div>
+                            <button id="btnLogin">Iniciar sesión</button>
+                        </div>
+                    </form>
                 </div>
+                <!-- formulario -->
+
+
+
+                <!-- separador -->
+                <div class="separadorContainer">
+                    <div class="linea linea1"></div>
+                    <div>o</div>
+                    <div class="linea linea2"></div>
+                </div>
+                <!-- separador -->
+
+
                 <div>
-                    <button type="button" disabled>Iniciar sesión</button>
-                    <section>
-                        <div></div>
-                        <div>o</div>
-                        <div></div>
-                    </section>
-                    <button type="button">
-                        <i class="fa-brands fa-square-facebook"></i>
-                        Iniciar sesión con Facebook
-                    </button>
+                    <div class="linkUsuario">
+                        <a href="#">Iniciar sesión con Facebook</a>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
                 </div>
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </form>
-            <div>¿No tienes una cuenta? <a href="#">Regístrate</a></div>
+                <!-- enlaces -->
+            </section>
+
             <section>
-                <div>Descarga la app.</div>
                 <div>
-                    <a href="#">
-                        <img class="sizeImg" src="https://static.cdninstagram.com/rsrc.php/v3/yT/r/0BpxdgM3WUr.png" alt="">
-                    </a>
-                    <a href="#">
-                        <img class="sizeImg" src="https://static.cdninstagram.com/rsrc.php/v3/y9/r/LjIQEL8csb0.png " alt="">
-                    </a>
+                    <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
                 </div>
+            </section>
+
+            <section>
+                <p>Descarga la app.</p>
+                <img src="assets/img/googleplay.png" class="imgTiendas" alt="">
+                <img src="assets/img/microsoft.png" class="imgTiendas" alt="">
             </section>
         </div>
     </section>
-
-    <footer>
-        <div>
-            <a href="#">Meta</a>
-        </div>
-        <div>
-            <a href="#">Información</a>
-        </div>
-        <div>
-            <a href="#">Blog</a>
-        </div>
-        <div>
-            <a href="#">Empleo</a>
-        </div>
-        <div>
-            <a href="#">Ayuda</a>
-        </div>
-        <div>
-            <a href="#">API</a>
-        </div>
-        <div>
-            <a href="#">Privacidad</a>
-        </div>
-        <div>
-            <a href="#">Condiciones</a>
-        </div>
-        <div>
-            <a href="#">Cuentas destacadas</a>
-        </div>
-        <div>
-            <a href="#">Ubicaciones</a>
-        </div>
-        <div>
-            <a href="#">Instagram Lite</a>
-        </div>
-        <div>
-            <a href="#">Subir contactos y no usuarios</a>
-        </div>
-        <div>
-            <a href="#">Meta Verified</a>
-        </div>
-        <div>
-            <a href="#">Español</a>
-        </div>
-
-
-        <i class="fa-solid fa-chevron-up"></i>
-    </footer>
+    <footer></footer>
 </body>
 
 </html>

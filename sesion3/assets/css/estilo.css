@@ -1,27 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/**
+
+* Universal
+. Clases
+# Id
+
+nombre_etiqueta
+
+*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.fondoTelefono {
+    background-image: url(../img/telefonos.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.imgSlider {
+    width: 250px;
+}
+
+#logoInstagram {
+    width: 180px;
+}
+
 .flexbox1 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sizeImg {
+.imgTiendas {
     height: 40px;
 }
 
-.logoInstagram {
-    background: url('../img/logoInstagram.png');
-    height: 51px;
-    width: 175px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+.cajaUsuario {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja1U {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
-    width: 258px;
-    height: 36px;
-    border: 1px solid #d6d6d6;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    margin: 0 40px 6px;
+    padding: 12px 0 9px 8px;
+    width: 260px;
+    background-color: #FAFAFA;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid #c5c5c5
+}
+
+.contenedorInputs {
+    margin: 10px 0;
+}
+
+#btnLogin {
+    width: 100%;
+    padding: 8px 0;
+    background-color: #0095f6;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    border: 0;
+}
+
+.separadorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linea {
+    background: #c5c5c5;
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.linea1 {
+    margin-right: 20px;
+}
+
+.linea2 {
+    margin-left: 20px;
+}
+
+.linkUsuario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkUsuario a {
+    margin: 30px 0;
 }
