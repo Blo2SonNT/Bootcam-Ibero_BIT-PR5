@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instagram</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
 
 
         <div class="cajaUsuario">
-            <section class="cajaFormulario">
+            <section class="cajaFormulario borde">
                 <!-- logo -->
                 <div class="caja1U">
                     <img src="assets/img/logoInstagram.png" id="logoInstagram" alt="">
@@ -55,27 +57,63 @@
 
                 <div>
                     <div class="linkUsuario">
-                        <a href="#">Iniciar sesión con Facebook</a>
-                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        <a href="#" id="enlace1">
+                            <span>
+                                <i class="fa-brands fa-square-facebook"></i> 
+                            </span> Iniciar sesión con Facebook
+                        </a>
+                        <a href="#" id="enlace2">¿Olvidaste tu contraseña?</a>
                     </div>
                 </div>
                 <!-- enlaces -->
             </section>
 
-            <section>
+            <section class="borde caja2">
                 <div>
-                    <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+                    <p class="textCenter">¿No tienes una cuenta? <a href="#">Regístrate</a></p>
                 </div>
             </section>
 
-            <section>
+            <section class="tiendas">
                 <p>Descarga la app.</p>
-                <img src="assets/img/googleplay.png" class="imgTiendas" alt="">
-                <img src="assets/img/microsoft.png" class="imgTiendas" alt="">
+                <div>
+                    <img src="assets/img/googleplay.png" class="imgTiendas" alt="">
+                    <img src="assets/img/microsoft.png" class="imgTiendas" alt="">
+                </div>
             </section>
         </div>
     </section>
-    <footer></footer>
+    <footer>
+        <div class="enlacesFooter">
+            <div>Meta</div>
+            <div>Información</div>
+            <div>Blog</div>
+            <div>Empleo</div>
+            <div>Ayuda</div>
+            <div>API</div>
+            <div>Privacidad</div>
+            <div>Condiciones</div>
+            <div>Cuentas destacadas</div>
+            <div>Ubicaciones</div>
+            <div>Instagram Lite</div>
+            <div>Subir contactos y no usuarios</div>
+            <div>Meta Verified</div>
+        </div>
+
+        <div class="idiomas">
+            <select>
+                <option value="1">Gringo</option>
+                <option value="2">Alemán</option>
+                <option value="3">Mandarin</option>
+                <option value="4" selected>Español</option>
+                <option value="5">Japones</option>
+                <option value="6">Ruso</option>
+                <option value="7">Colombiano</option>
+                <option value="8">Argentino</option>
+            </select>
+            <div>&copy; 2023 Instagram from Meta</div>
+        </div>
+    </footer>
 </body>
 
 </html>
