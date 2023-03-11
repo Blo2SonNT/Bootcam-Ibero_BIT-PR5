@@ -87,6 +87,7 @@ input {
 
 #btnLogin:hover {
     background-color: red;
+    transition: all 2s;
 }
 
 .separadorContainer {

@@ -1,0 +1,43 @@
+.contenedor {
+    background: #2984ec;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 150px 250px;
+    width: 100%;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.d1 {
+    background: #fd2121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.d2 {
+    background: #17fd49;
+    justify-self: center;
+}
+
+.d3 {
+    background: #e6c615;
+}
+
+.d4 {
+    background: #a50fe0;
+}
+
+.d5 {
+    background: #00fff2;
+}
+
+.d6 {
+    background: #85377e;
+}
+
+.d7 {
+    background: #172219;
+}
