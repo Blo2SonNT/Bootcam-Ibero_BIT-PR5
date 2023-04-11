@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="listaDeNumeros"></ul>
+
+    <script>
+        //si es impar 7 x3+1
+        //si es par n /2
+
+
+        // let numeroUsuario = prompt("Cual es el numero que usted desea para la conjetura?")
+        // let listaHtml = document.querySelector("#listaDeNumeros")
+        // while (numeroUsuario > 1) {
+        //     if (numeroUsuario % 2 == 0) {
+        //         numeroUsuario = numeroUsuario / 2
+        //     } else {
+        //         numeroUsuario = (numeroUsuario * 3) + 1
+        //     }
+        //     listaHtml.innerHTML += `<li>${numeroUsuario}</li>`
+        // }
+
+
+        /*
+        MANERA CORTA CON EVALUACIÓN TERNARIA
+        */
+
+        // let numeroUsuario = prompt("Cual es el numero que usted desea para la conjetura?")
+        // while (numeroUsuario > 1) {
+        //     numeroUsuario = (numeroUsuario % 2 == 0) ? numeroUsuario / 2 : (numeroUsuario * 3) + 1
+        //     console.log(numeroUsuario)
+        // }
+
+
+        let lista = prompt("hasta que numero desea la lista?")
+        let listaHtml = document.querySelector("#listaDeNumeros")
+
+        for (let x = 0; x <= lista; x++) {
+            listaHtml.innerHTML += `<li>${x}</li>`
+        }
+    </script>
+
+
+</body>
+
+</html>
