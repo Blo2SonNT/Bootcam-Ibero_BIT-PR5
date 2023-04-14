@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'mi-fuente-chidori';
+    src: url(../fonts/Laura\ Barbara.ttf);
+}
+
+.fuenteChidori {
+    font-family: "mi-fuente-chidori";
+}
