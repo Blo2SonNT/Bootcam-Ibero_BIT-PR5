@@ -1,16 +1,37 @@
+mostrarNotas()
+
 function guardarNota() {
     let tituloNota = document.querySelector("#tituloNotaUsuario")
     let textoNota = document.querySelector("#notaUsuario")
-    if (tituloNota.value == '') {
-        disparaAlerta("Ingrese el titulo de la nota", "warning", "#ff5618", "#0caaff")
+    if (tituloNota.value == '' || textoNota.value == '') {
+        disparaAlerta("Por favor diligencie todos los campos del formulario", "warning", "#ff5618", "#000")
         tituloNota.classList.add("border", "border-danger")
-        return
+        textoNota.classList.add("border", "border-danger")
+    } else {
+        localStorage.setItem("titulo", tituloNota.value)
+        localStorage.setItem("nota", textoNota.value)
+        tituloNota.classList.remove("border", "border-danger")
+        textoNota.classList.remove("border", "border-danger")
+        mostrarNotas()
     }
+}
 
-    if (textoNota.value == '') {
-        disparaAlerta("Ingrese el contenido de la nota", "error", "#28ff1c", "#ff00ea")
-        return
-    }
+function mostrarNotas() {
+    let divNotas = document.querySelector("#notasGuardadas")
+
+    let tituloNota = localStorage.getItem("titulo")
+    let nota = localStorage.getItem("nota")
+
+    divNotas.innerHTML = `
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${tituloNota}</h5>
+                    <p class="card-text">${nota}</p>
+                </div>
+            </div>
+        </div>
+    `
 }
 
 
