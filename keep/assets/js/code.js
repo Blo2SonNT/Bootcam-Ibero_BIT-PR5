@@ -8,8 +8,18 @@ function guardarNota() {
         tituloNota.classList.add("border", "border-danger")
         textoNota.classList.add("border", "border-danger")
     } else {
-        localStorage.setItem("titulo", tituloNota.value)
-        localStorage.setItem("nota", textoNota.value)
+        debugger
+        let cantidadNotasActuales = 1
+        if (localStorage.getItem("cantidad") == null) {
+            localStorage.setItem("cantidad", cantidadNotasActuales)
+        } else {
+            cantidadNotasActuales = localStorage.getItem("cantidad")
+            cantidadNotasActuales = parseInt(cantidadNotasActuales)
+            cantidadNotasActuales = cantidadNotasActuales + 1
+            localStorage.setItem("cantidad", cantidadNotasActuales)
+        }
+        localStorage.setItem("titulo" + cantidadNotasActuales, tituloNota.value)
+        localStorage.setItem(`nota${cantidadNotasActuales}`, textoNota.value)
         tituloNota.classList.remove("border", "border-danger")
         textoNota.classList.remove("border", "border-danger")
         mostrarNotas()
