@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+
+    <ul id="listaProductos"></ul>
+
+    <script>
+        //Creación de array
+        let listaDeCompras = ["papas", "huevos", "leche", "queso", "nutella", "gansito"]
+        console.log(listaDeCompras)
+            //Cambiar valor d una posición especifica
+        listaDeCompras[3] = "queso pera"
+        console.log(listaDeCompras)
+
+        //Agregar elementos AL FINAL
+        //PUSH (. . . )
+        listaDeCompras.push("salchichas")
+        console.log(listaDeCompras)
+        listaDeCompras.push("pan", "halls", "mojarra")
+        console.log(listaDeCompras)
+
+        //Eliminar ultimo elemento
+        listaDeCompras.pop()
+        console.log(listaDeCompras)
+
+        //Agregar elementos AL INICIO
+        listaDeCompras.unshift("suero")
+        console.log(listaDeCompras)
+        listaDeCompras.unshift("algo pal guayabo", "cerveza", "costillitas")
+        console.log(listaDeCompras)
+
+        //Eliminar primer elemento
+        listaDeCompras.shift()
+        console.log(listaDeCompras)
+
+        //Buscar posición del elemento deseado
+        console.log("El pan esta en la posición: " + listaDeCompras.indexOf("Pan"))
+
+        //Saber cuantos elementos hay dentro del array
+        console.log("Hay " + listaDeCompras.length + " elementos en el array")
+
+        //Agregar - Eliminar  || elementos intermedios (Entre elementos)
+        console.log(listaDeCompras)
+        listaDeCompras.splice(4, 2, "alpinito", "monster")
+        console.log(listaDeCompras)
+
+        //Ordenar de manera alfabética el array
+        console.log(listaDeCompras.sort())
+
+        let edades = [18, 25, -15, 75, 102, 4, 37, 1005, -1]
+        console.log(edades)
+        console.log(edades.sort())
+            //ordenar de menor a mayor
+        console.log(edades.sort((gato1, perro1) => {
+                return gato1 - perro1
+            }))
+            //ordenar de mayor a menor
+        console.log(edades.sort((a, b) => {
+            return b - a
+        }))
+
+        //return de una función
+        function mensaje() {
+            return "hola este es un mensaje"
+        }
+
+        //invertir orden del array
+        console.log(listaDeCompras.reverse())
+
+        listaDeCompras.forEach((producto, indice, mismoArray) => {
+            document.querySelector("#listaProductos").innerHTML += `<li>${producto}</li>`
+        });
+
+        // for (let x = 0; x < listaDeCompras.length; x++) {
+        //     document.querySelector("#listaProductos").innerHTML += `<li>${listaDeCompras[x]}</li>`
+        // }
+    </script>
+</body>
+
+</html>

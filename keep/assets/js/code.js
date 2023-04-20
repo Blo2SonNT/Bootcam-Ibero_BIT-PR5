@@ -38,19 +38,19 @@ function mostrarNotas() {
                 let tituloNota = localStorage.getItem(`titulo${x}`)
                 let nota = localStorage.getItem(`nota${x}`)
                 divNotas.innerHTML += `
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${tituloNota}</h5>
-                        <p class="card-text">${nota}</p>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <button onclick="editarNota(${x})" class="btn btn-warning mx-2">Editar</button>
-                            <button onclick="eliminarNota(${x})" class="btn btn-danger mx-2">Eliminar</button>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${tituloNota}</h5>
+                                <p class="card-text">${nota}</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button onclick="editarNota(${x})" class="btn btn-warning mx-2">Editar</button>
+                                    <button onclick="eliminarNota(${x})" class="btn btn-danger mx-2">Eliminar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        `
+                `
             }
         }
     }
@@ -73,7 +73,10 @@ function editarNota(idNota) {
     document.querySelector("#btnFormulario").setAttribute("onclick", `guardarCambiosNota(${idNota})`)
     console.log(idNota)
 }
-
+/*
+jnojk
+khoui
+*/
 function guardarCambiosNota(idNotaAEditar) {
     let tituloNota = document.querySelector("#tituloNotaUsuario")
     let textoNota = document.querySelector("#notaUsuario")
