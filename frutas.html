@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Ingrese su fruta" id="inputFruta">
+    <button onclick="guardarFruta()">Guardar</button>
+
+    <script>
+        function guardarFruta() {
+            let cantidadFrutas = 0
+            if (localStorage.getItem("cantidadFrutas") == null) {
+                localStorage.setItem("cantidadFrutas", cantidadFrutas)
+            } else {
+                cantidadFrutas = localStorage.getItem("cantidadFrutas")
+            }
+            let frutasGuardadas = (localStorage.getItem("lista") == null) ? [] : JSON.parse(localStorage.getItem("lista"))
+
+            let usuarioFruta = document.querySelector("#inputFruta").value
+            frutasGuardadas.push({
+                id: parseInt(cantidadFrutas) + 1,
+                nombre: usuarioFruta
+            })
+            localStorage.setItem("cantidadFrutas", parseInt(cantidadFrutas) + 1)
+            localStorage.setItem("lista", JSON.stringify(frutasGuardadas))
+        }
+    </script>
+
+</body>
+
+</html>

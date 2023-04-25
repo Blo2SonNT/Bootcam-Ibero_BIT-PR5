@@ -16,8 +16,25 @@ function guardarNota() {
             cantidadNotasActuales = parseInt(cantidadNotasActuales) + 1
             localStorage.setItem("cantidad", cantidadNotasActuales)
         }
-        localStorage.setItem("titulo" + cantidadNotasActuales, tituloNota.value)
-        localStorage.setItem(`nota${cantidadNotasActuales}`, textoNota.value)
+
+        let notasUsuario
+        if (localStorage.getItem("keep") == null) {
+            notasUsuario = []
+        } else {
+            notasUsuario = JSON.parse(localStorage.getItem("keep"))
+        }
+
+        notasUsuario.push({
+            id: cantidadNotasActuales,
+            titulo: tituloNota.value,
+            nota: textoNota.value
+        })
+
+        //! let notasEjemplo = (localStorage.getItem("keep") == null) ? [] : JSON.parse(localStorage.getItem("keep"))
+
+        localStorage.setItem("keep", JSON.stringify(notasUsuario))
+            // localStorage.setItem("titulo" + cantidadNotasActuales, tituloNota.value)
+            // localStorage.setItem(`nota${cantidadNotasActuales}`, textoNota.value)
         tituloNota.classList.remove("border", "border-danger")
         textoNota.classList.remove("border", "border-danger")
         tituloNota.value = ''
@@ -33,26 +50,43 @@ function mostrarNotas() {
         divNotas.innerHTML = "<h1>No hay ninguna nota</h1>"
     } else {
         divNotas.innerHTML = ''
-        for (let x = 1; x <= cantidadNotasActuales; x++) {
-            if (localStorage.getItem(`titulo${x}`) != null) {
-                let tituloNota = localStorage.getItem(`titulo${x}`)
-                let nota = localStorage.getItem(`nota${x}`)
-                divNotas.innerHTML += `
+            // for (let x = 1; x <= cantidadNotasActuales; x++) {
+            //     if (localStorage.getItem(`titulo${x}`) != null) {
+            //         let tituloNota = localStorage.getItem(`titulo${x}`)
+            //         let nota = localStorage.getItem(`nota${x}`)
+            //         divNotas.innerHTML += `
+            //             <div class="col">
+            //                 <div class="card">
+            //                     <div class="card-body">
+            //                         <h5 class="card-title">${tituloNota}</h5>
+            //                         <p class="card-text">${nota}</p>
+            //                         <div class="d-flex justify-content-center align-items-center">
+            //                             <button onclick="editarNota(${x})" class="btn btn-warning mx-2">Editar</button>
+            //                             <button onclick="eliminarNota(${x})" class="btn btn-danger mx-2">Eliminar</button>
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //         `
+            //     }
+            // }
+        let notasUsuarioPepe = JSON.parse(localStorage.getItem("keep"))
+        notasUsuarioPepe.forEach((notica, posicionNota) => {
+            divNotas.innerHTML += `
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">${tituloNota}</h5>
-                                <p class="card-text">${nota}</p>
+                                <h5 class="card-title">${notica.titulo}</h5>
+                                <p class="card-text">${notica.nota}</p>
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <button onclick="editarNota(${x})" class="btn btn-warning mx-2">Editar</button>
-                                    <button onclick="eliminarNota(${x})" class="btn btn-danger mx-2">Eliminar</button>
+                                    <button onclick="editarNota()" class="btn btn-warning mx-2">Editar</button>
+                                    <button onclick="eliminarNota()" class="btn btn-danger mx-2">Eliminar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 `
-            }
-        }
+        });
     }
 }
 
@@ -73,10 +107,7 @@ function editarNota(idNota) {
     document.querySelector("#btnFormulario").setAttribute("onclick", `guardarCambiosNota(${idNota})`)
     console.log(idNota)
 }
-/*
-jnojk
-khoui
-*/
+
 function guardarCambiosNota(idNotaAEditar) {
     let tituloNota = document.querySelector("#tituloNotaUsuario")
     let textoNota = document.querySelector("#notaUsuario")
