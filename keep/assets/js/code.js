@@ -33,8 +33,6 @@ function guardarNota() {
         //! let notasEjemplo = (localStorage.getItem("keep") == null) ? [] : JSON.parse(localStorage.getItem("keep"))
 
         localStorage.setItem("keep", JSON.stringify(notasUsuario))
-            // localStorage.setItem("titulo" + cantidadNotasActuales, tituloNota.value)
-            // localStorage.setItem(`nota${cantidadNotasActuales}`, textoNota.value)
         tituloNota.classList.remove("border", "border-danger")
         textoNota.classList.remove("border", "border-danger")
         tituloNota.value = ''
@@ -50,26 +48,6 @@ function mostrarNotas() {
         divNotas.innerHTML = "<h1>No hay ninguna nota</h1>"
     } else {
         divNotas.innerHTML = ''
-            // for (let x = 1; x <= cantidadNotasActuales; x++) {
-            //     if (localStorage.getItem(`titulo${x}`) != null) {
-            //         let tituloNota = localStorage.getItem(`titulo${x}`)
-            //         let nota = localStorage.getItem(`nota${x}`)
-            //         divNotas.innerHTML += `
-            //             <div class="col">
-            //                 <div class="card">
-            //                     <div class="card-body">
-            //                         <h5 class="card-title">${tituloNota}</h5>
-            //                         <p class="card-text">${nota}</p>
-            //                         <div class="d-flex justify-content-center align-items-center">
-            //                             <button onclick="editarNota(${x})" class="btn btn-warning mx-2">Editar</button>
-            //                             <button onclick="eliminarNota(${x})" class="btn btn-danger mx-2">Eliminar</button>
-            //                         </div>
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //         `
-            //     }
-            // }
         let notasUsuarioPepe = JSON.parse(localStorage.getItem("keep"))
         notasUsuarioPepe.forEach((notica, posicionNota) => {
             divNotas.innerHTML += `
@@ -79,8 +57,8 @@ function mostrarNotas() {
                                 <h5 class="card-title">${notica.titulo}</h5>
                                 <p class="card-text">${notica.nota}</p>
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <button onclick="editarNota()" class="btn btn-warning mx-2">Editar</button>
-                                    <button onclick="eliminarNota()" class="btn btn-danger mx-2">Eliminar</button>
+                                    <button onclick="editarNota(${notica.id})" class="btn btn-warning mx-2">Editar</button>
+                                    <button onclick="eliminarNota(${notica.id})" class="btn btn-danger mx-2">Eliminar</button>
                                 </div>
                             </div>
                         </div>
@@ -91,8 +69,13 @@ function mostrarNotas() {
 }
 
 function eliminarNota(idNota) {
-    localStorage.removeItem(`titulo${idNota}`)
-    localStorage.removeItem(`nota${idNota}`)
+    let keepUsuario = JSON.parse(localStorage.getItem("keep"))
+    keepUsuario.forEach((notaUsuario, posicion) => {
+        if (notaUsuario.id == idNota) {
+            keepUsuario.splice(posicion, 1)
+        }
+    });
+    localStorage.setItem("keep", JSON.stringify(keepUsuario))
     mostrarNotas()
 }
 
@@ -100,8 +83,17 @@ function eliminarNota(idNota) {
 function editarNota(idNota) {
     let tituloNota = document.querySelector("#tituloNotaUsuario")
     let textoNota = document.querySelector("#notaUsuario")
-    tituloNota.value = localStorage.getItem(`titulo${idNota}`)
-    textoNota.value = localStorage.getItem(`nota${idNota}`)
+
+    let keepsUsuario = JSON.parse(localStorage.getItem("keep"))
+    console.log('file: code.js:85 ->  keepsUsuario:', keepsUsuario)
+
+    keepsUsuario.forEach((notaUsuario) => {
+        if (notaUsuario.id == idNota) {
+            tituloNota.value = notaUsuario.titulo
+            textoNota.value = notaUsuario.nota
+        }
+    });
+
     document.querySelector("#btnFormulario").removeAttribute("onclick")
     document.querySelector("#btnFormulario").innerHTML = "Editar nota"
     document.querySelector("#btnFormulario").setAttribute("onclick", `guardarCambiosNota(${idNota})`)
@@ -112,8 +104,14 @@ function guardarCambiosNota(idNotaAEditar) {
     let tituloNota = document.querySelector("#tituloNotaUsuario")
     let textoNota = document.querySelector("#notaUsuario")
     if (tituloNota.value != "" && textoNota.value != "") {
-        localStorage.setItem(`titulo${idNotaAEditar}`, tituloNota.value)
-        localStorage.setItem(`nota${idNotaAEditar}`, textoNota.value)
+        let keepUsuario = JSON.parse(localStorage.getItem("keep"))
+        keepUsuario.forEach((notaUsuario, posicionNota) => {
+            if (notaUsuario.id == idNotaAEditar) {
+                keepUsuario[posicionNota].titulo = tituloNota.value
+                keepUsuario[posicionNota].nota = textoNota.value
+            }
+        })
+        localStorage.setItem("keep", JSON.stringify(keepUsuario))
         mostrarNotas()
         document.querySelector("#btnFormulario").removeAttribute("onclick")
         document.querySelector("#btnFormulario").innerHTML = "Guardar nota"
@@ -135,4 +133,13 @@ function disparaAlerta(mensajeDeLaAlerta, icono, colorIcono, colorTexto) {
         color: colorTexto
     })
     console.error(mensajeDeLaAlerta)
+}
+
+
+if (pepe == "pepe") {
+
+} else if (pepe = "maria") {
+
+} else {
+
 }
