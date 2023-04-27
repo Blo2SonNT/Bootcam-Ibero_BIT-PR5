@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <style>
+        .hoverTextura {
+            transition: .5s all;
+        }
+        
+        .hoverTextura:hover {
+            opacity: 0.5;
+        }
+        
+        .btnReproducir {
+            height: 100px;
+            width: 100px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: .5s all;
+            border-radius: 50px;
+            background: #e0e0e0;
+            box-shadow: 20px 20px 60px #000000, -20px -20px 60px #ffffff;
+            cursor: pointer;
+        }
+        
+        .btnReproducir:hover {
+            background-color: rgb(83, 83, 83);
+        }
+        
+        .btnReproducir i {
+            color: #fff;
+        }
+    </style>
+    <div id="resultados"></div>
+    <button onclick="ejecutarOperaciones()">Hacer operaciones</button>
+
+
+    <div class="btnReproducir" id="btnReproducir" onclick="reproducirSonido()">
+        <i class="fa-solid fa-play"></i>
+    </div>
+
+
+    <img src="" id="texturaSeleccionada" alt="">
+
+
+    <img src="" id="lavaMinecraft" alt="">
+    <script src="poo.js"></script>
+
+</body>
+
+</html>
