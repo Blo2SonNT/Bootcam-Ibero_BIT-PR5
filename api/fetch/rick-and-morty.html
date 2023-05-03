@@ -11,43 +11,68 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script>
-        let bodyHtml = document.querySelector("body")
-        let divContainer = document.createElement("div")
-        divContainer.className = "container"
-        bodyHtml.appendChild(divContainer)
-        let divCards = document.createElement("div")
-            // divCards.classList.add("row", "row-cols-1", "row-cols-md-2", "g-4")
-        divCards.className = "row row-cols-1 row-cols-md-6 g-4"
-        divContainer.appendChild(divCards)
+        function obtenerPersonajes(urlApi = "https://rickandmortyapi.com/api/character") {
+            let bodyHtml = document.querySelector("body")
+            bodyHtml.innerHTML = ''
+            let divContainer = document.createElement("div")
+            divContainer.className = "container"
+            bodyHtml.appendChild(divContainer)
+            let divCards = document.createElement("div")
+                // divCards.classList.add("row", "row-cols-1", "row-cols-md-2", "g-4")
+            divCards.className = "row row-cols-1 row-cols-md-6 g-4"
+            divContainer.appendChild(divCards)
 
 
 
-        //consumo de api usando fetch
-        let urlApi = "https://rickandmortyapi.com/api/character";
+            //consumo de api usando fetch
 
-        fetch(urlApi)
-            .then((data) => data.json())
-            .then(dataApiGatito => {
-                dataApiGatito.results.forEach(personaje => {
-                    let divCol = document.createElement("div")
-                    divCol.className = "col"
-                    divCards.appendChild(divCol)
+            fetch(urlApi)
+                .then((data) => data.json())
+                .then(dataApiGatito => {
+                    console.log(dataApiGatito)
+                    dataApiGatito.results.forEach(personaje => {
+                        let divCol = document.createElement("div")
+                        divCol.className = "col"
+                        divCards.appendChild(divCol)
 
-                    let divCard = document.createElement("div")
-                    divCard.className = "card"
-                    divCol.appendChild(divCard)
+                        let divCard = document.createElement("div")
+                        divCard.className = "card"
+                        divCol.appendChild(divCard)
 
-                    let imgCard = document.createElement("img")
-                    imgCard.className = "card-img-top"
-                    imgCard.src = personaje.image
-                    divCard.appendChild(imgCard)
+                        let imgCard = document.createElement("img")
+                        imgCard.className = "card-img-top"
+                        imgCard.src = personaje.image
+                        divCard.appendChild(imgCard)
 
-                    let tituloNombre = document.createElement("h5")
-                    tituloNombre.innerText = personaje.name
-                    tituloNombre.className = "text-center py-3"
-                    divCard.appendChild(tituloNombre)
-                });
-            })
+                        let tituloNombre = document.createElement("h5")
+                        tituloNombre.innerText = personaje.name
+                        tituloNombre.className = "text-center py-3"
+                        divCard.appendChild(tituloNombre)
+                    });
+
+                    let btnAnterior = document.createElement("button")
+                    btnAnterior.className = "btn btn-warning me-3 my-4"
+                    btnAnterior.innerText = "Anterior"
+                    if (dataApiGatito.info.prev != null) {
+                        btnAnterior.setAttribute("onclick", `obtenerPersonajes('${dataApiGatito.info.prev}')`)
+                    } else {
+                        btnAnterior.disabled = true
+                    }
+                    divContainer.appendChild(btnAnterior)
+                    let btnSiguiente = document.createElement("button")
+                    btnSiguiente.className = "btn btn-warning ms-3 my-4"
+                    btnSiguiente.innerText = "Siguiente"
+                    if (dataApiGatito.info.next != null) {
+                        btnSiguiente.setAttribute("onclick", `obtenerPersonajes('${dataApiGatito.info.next}')`)
+                    } else {
+                        btnSiguiente.disabled = true
+                    }
+                    divContainer.appendChild(btnSiguiente)
+
+                })
+        }
+
+        obtenerPersonajes()
     </script>
 </body>
 
