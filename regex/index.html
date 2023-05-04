@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="formulario">
+        <input type="text" id="correo" placeholder="Ingrese su correo">
+        <br>
+        <input type="text" id="edad" placeholder="Ingrese su edad">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        //kiana
+        //carlos
+
+        validacionCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+        regexNumero = /^[0-9]+$/;
+        // let correoUsuario = prompt("Cual es tu correo?")
+        // if (validacionCorreo.test(correoUsuario) == false) {
+        //     alert("correo invalido 🤡")
+        // } else {
+        //     alert("Siga rey!!")
+        // }
+
+        document.querySelector("#formulario").addEventListener("submit", (evento) => {
+            evento.preventDefault();
+            let bodyHtml = document.querySelector("body")
+            if (!validacionCorreo.test(evento.target.correo.value)) {
+                let alertaCorreo = document.createElement("h4")
+                alertaCorreo.innerText = "Correo invalido"
+                bodyHtml.appendChild(alertaCorreo)
+            }
+            if (!regexNumero.test(evento.target.edad.value)) {
+                let alertaEdad = document.createElement("h4")
+                alertaEdad.innerText = "Edad invalida"
+                bodyHtml.appendChild(alertaEdad)
+            }
+        })
+
+
+        // const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log("A")
+        // setTimeout(() => {
+        //     console.log("B")
+        // }, 2000);
+        // console.log("C")
+
+        const obtenerPokemones = async() => {
+            try {
+                const consumoApi = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
+                const dataJson = await consumoApi.json()
+                dataJson.results.forEach(pokemon => {
+                    console.log(detallePokemon(pokemon.url))
+                });
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        obtenerPokemones()
+
+
+
+        const detallePokemon = async(urlPokemon) => {
+            const dataPokemon = await fetch(urlPokemon)
+            const dataPokeDetalle = await dataPokemon.json()
+            return dataPokeDetalle
+        }
+
+
+
+
+
+
+
+
+
+
+        const obtenerPersonajesRickAndMorty = async() => {
+            try {
+                const consumo = await fetch("https://rickandmortyapi.com/api/character")
+                const data = await consumo.json()
+                data.results.forEach((personaje) => {
+                    console.log(personaje)
+                })
+            } catch (error) {
+
+            }
+        }
+
+        obtenerPersonajesRickAndMorty()
+
+
+        function fetchEjemplo() {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(res => res.json())
+                .then((dataApi) => {
+                    let bodyHtml = document.querySelector('body')
+                    let imgPerro = document.createElement('img')
+                    imgPerro.src = dataApi.message
+                    bodyHtml.appendChild(imgPerro)
+                    console.log(dataApi)
+                })
+        }
+
+        fetchEjemplo()
+            //cSpell:disable
+        const fetchApiasync = async() => {
+            let pepe = await fetch('https://dog.ceo/api/breeds/image/random')
+            let datapepe = await pepe.json()
+            let bodyHtml = document.querySelector('body')
+            let imgPerro = document.createElement('img')
+            imgPerro.src = datapepe.message
+            bodyHtml.appendChild(imgPerro)
+            console.log(datapepe)
+        }
+
+        fetchApiasync()
+    </script>
+</body>
+
+</html>
