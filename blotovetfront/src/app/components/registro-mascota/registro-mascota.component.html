@@ -1,0 +1,30 @@
+<section class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center my-5 titulo">Registra tu mascota</h1>
+            <form [formGroup]="mascotasForm" (ngSubmit)="actualizar_registrar_mascota()">
+                <div class="mb-3">
+                    <label for="nombre_mascota" class="form-label">Nombre de tu mascota</label>
+                    <input type="text" class="form-control" id="nombre_mascota" formControlName="nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="edad_mascota" class="form-label">Edad de tu mascota</label>
+                    <input type="number" class="form-control" id="edad_mascota" formControlName="edad">
+                </div>
+                <div class="mb-3">
+                    <label for="propietario_mascota" class="form-label">Como se llama el dueño de la mascota?</label>
+                    <input type="text" class="form-control" id="propietario_mascota" formControlName="propietario">
+                </div>
+                <div class="mb-3">
+                    <label for="documento_propietario" class="form-label">Documento del dueño de la mascota</label>
+                    <input type="text" class="form-control" id="documento_propietario" formControlName="doc_propietario">
+                </div>
+                <div class="mb-3">
+                    <label for="url_imagen_mascota" class="form-label">Adjunta una imagen de tu mascota</label>
+                    <input type="text" class="form-control" id="url_imagen_mascota" formControlName="url_imagen">
+                </div>
+                <button type="submit" class="btn btn-primary mb-5">Registrar mascota</button>
+            </form>
+        </div>
+    </div>
+</section>

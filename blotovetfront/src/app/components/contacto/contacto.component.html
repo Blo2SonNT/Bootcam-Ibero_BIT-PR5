@@ -1,44 +1,33 @@
 <!-- inicio contacto -->
 
-<section class="container">
-    <h1 class="text-center">Dejanos tus datos 😬😬</h1>
+<section class="container my-5">
+    <h1 class="text-center">NUESTRO EQUIPO ATENDERÁ TODAS TUS SOLICITUDES</h1>
     <div class="row">
         <div class="col-6 offset-3">
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
+            <form class="row g-3" [formGroup]="contactoForm" (ngSubmit)="crear_data_contacto()">
+                <div class="col-md-12">
+                    <label for="nombreUsuario" class="form-label">Nombre y apellidos</label>
+                    <input type="text" class="form-control" formControlName="nombre" id="nombreUsuario">
+                    <p class="m-0 p-0 text-danger fw-bold">Nombre y apellidos son obligatorios</p>
+                    <p class="m-0 p-0 text-danger fw-bold">El nombre y apellidos debe de contener como minimo 3 caracteres</p>
                 </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
+                <div class="col-md-12">
+                    <label for="correoUsuario" class="form-label">Correo</label>
+                    <input type="email" class="form-control" formControlName="correo" id="correoUsuario">
+                    <p class="m-0 p-0 text-danger fw-bold">El correo es obligatorio</p>
+                    <p class="m-0 p-0 text-danger fw-bold">El correo no es valido</p>
                 </div>
                 <div class="col-12">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    <label for="asuntoUsuario" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" formControlName="asunto" id="asuntoUsuario">
+                    <p class="m-0 p-0 text-danger fw-bold">El asunto contiene caracteres invalidos</p>
+                </div>
+                <div class="col-md-12">
+                    <label for="mensajeUsuario" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensajeUsuario" formControlName="mensaje"></textarea>
                 </div>
                 <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
             </form>
         </div>
