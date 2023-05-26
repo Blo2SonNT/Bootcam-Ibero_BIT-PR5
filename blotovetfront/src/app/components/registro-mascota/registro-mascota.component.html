@@ -6,24 +6,36 @@
                 <div class="mb-3">
                     <label for="nombre_mascota" class="form-label">Nombre de tu mascota</label>
                     <input type="text" class="form-control" id="nombre_mascota" formControlName="nombre">
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('nombre')?.hasError('required') && mascotasForm.get('nombre')?.touched">El nombre de la mascota es obligatorio</p>
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('nombre')?.hasError('pattern') && mascotasForm.get('nombre')?.touched">El nombre ingresado no es valido</p>
                 </div>
                 <div class="mb-3">
                     <label for="edad_mascota" class="form-label">Edad de tu mascota</label>
                     <input type="number" class="form-control" id="edad_mascota" formControlName="edad">
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('edad')?.hasError('required') && mascotasForm.get('edad')?.touched">La edad es obligatoria</p>
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('edad')?.hasError('pattern') && mascotasForm.get('edad')?.touched">La edad ingresada no es valida</p>
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('edad')?.hasError('min') && mascotasForm.get('edad')?.touched">La edad minima para el registro es de 1 año</p>
                 </div>
                 <div class="mb-3">
                     <label for="propietario_mascota" class="form-label">Como se llama el dueño de la mascota?</label>
                     <input type="text" class="form-control" id="propietario_mascota" formControlName="propietario">
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('propietario')?.hasError('required') && mascotasForm.get('propietario')?.touched">El nombre del propietario es obligatorio</p>
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('propietario')?.hasError('pattern') && mascotasForm.get('propietario')?.touched">El nombre ingresado no es valido</p>
                 </div>
                 <div class="mb-3">
                     <label for="documento_propietario" class="form-label">Documento del dueño de la mascota</label>
                     <input type="text" class="form-control" id="documento_propietario" formControlName="doc_propietario">
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('doc_propietario')?.hasError('required') && mascotasForm.get('doc_propietario')?.touched">El documento del propietario es obligatorio</p>
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('doc_propietario')?.hasError('pattern') && mascotasForm.get('doc_propietario')?.touched">El documento ingresado no es valido</p>
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('doc_propietario')?.hasError('minlength') && mascotasForm.get('doc_propietario')?.touched">El documento debe de contener como mínimo 6 caracteres</p>
                 </div>
                 <div class="mb-3">
                     <label for="url_imagen_mascota" class="form-label">Adjunta una imagen de tu mascota</label>
                     <input type="text" class="form-control" id="url_imagen_mascota" formControlName="url_imagen">
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('url_imagen')?.hasError('required') && mascotasForm.get('url_imagen')?.touched">La imagen de tu mascota es obligatoria</p>
+                    <p class="text-danger fw-bold m-0 p-0" *ngIf="mascotasForm.get('url_imagen')?.hasError('pattern') && mascotasForm.get('url_imagen')?.touched">La url ingresada no es valida</p>
                 </div>
-                <button type="submit" class="btn btn-primary mb-5">Registrar mascota</button>
+                <button type="submit" class="btn btn-primary mb-5" [disabled]="mascotasForm.invalid">Registrar mascota</button>
             </form>
         </div>
     </div>

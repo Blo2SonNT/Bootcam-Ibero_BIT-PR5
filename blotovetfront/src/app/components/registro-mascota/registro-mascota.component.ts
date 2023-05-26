@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 })
 export class RegistroMascotaComponent {
     mascotasForm:FormGroup
-    regexString = /^[a-zA-Z]+$/
+    regexString = /^[a-zA-Z\s]+$/
     regexNumero = /^[0-9]+$/
     regexUrl = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 

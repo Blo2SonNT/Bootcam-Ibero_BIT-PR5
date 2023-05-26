@@ -8,26 +8,28 @@
                 <div class="col-md-12">
                     <label for="nombreUsuario" class="form-label">Nombre y apellidos</label>
                     <input type="text" class="form-control" formControlName="nombre" id="nombreUsuario">
-                    <p class="m-0 p-0 text-danger fw-bold">Nombre y apellidos son obligatorios</p>
-                    <p class="m-0 p-0 text-danger fw-bold">El nombre y apellidos debe de contener como minimo 3 caracteres</p>
+
+                    <p class="m-0 p-0 text-danger fw-bold" *ngIf="contactoForm.get('nombre')?.hasError('required') && contactoForm.get('nombre')?.touched">Nombre y apellidos son obligatorios</p>
+
+                    <p class="m-0 p-0 text-danger fw-bold" *ngIf="contactoForm.get('nombre')?.hasError('minlength') && contactoForm.get('nombre')?.touched">El nombre y apellidos debe de contener como mínimo 3 caracteres</p>
                 </div>
                 <div class="col-md-12">
                     <label for="correoUsuario" class="form-label">Correo</label>
                     <input type="email" class="form-control" formControlName="correo" id="correoUsuario">
-                    <p class="m-0 p-0 text-danger fw-bold">El correo es obligatorio</p>
-                    <p class="m-0 p-0 text-danger fw-bold">El correo no es valido</p>
+                    <p class="m-0 p-0 text-danger fw-bold" *ngIf="contactoForm.get('correo')?.hasError('required') && contactoForm.get('correo')?.touched">El correo es obligatorio</p>
+                    <p class="m-0 p-0 text-danger fw-bold" *ngIf="contactoForm.get('correo')?.hasError('pattern') && contactoForm.get('correo')?.touched">El correo no es valido</p>
                 </div>
                 <div class="col-12">
                     <label for="asuntoUsuario" class="form-label">Asunto</label>
                     <input type="text" class="form-control" formControlName="asunto" id="asuntoUsuario">
-                    <p class="m-0 p-0 text-danger fw-bold">El asunto contiene caracteres invalidos</p>
+                    <p class="m-0 p-0 text-danger fw-bold" *ngIf="contactoForm.get('asunto')?.hasError('pattern') && contactoForm.get('asunto')?.touched">El asunto contiene caracteres inválidos</p>
                 </div>
                 <div class="col-md-12">
                     <label for="mensajeUsuario" class="form-label">Mensaje</label>
                     <textarea class="form-control" id="mensajeUsuario" formControlName="mensaje"></textarea>
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="contactoForm.invalid">Enviar</button>
                 </div>
             </form>
         </div>
