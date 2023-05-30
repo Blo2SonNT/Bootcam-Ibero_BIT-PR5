@@ -1,0 +1,28 @@
+<section class="container my-5">
+    <h1 class="text-center mb-4">Registro de mascotas</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Nombre mascota</th>
+                <th scope="col">Edad mascota</th>
+                <th scope="col">Propietario</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let mascota of listaMascotas">
+            <tr>
+                <td>
+                    <img style="width: 50px;" src="{{mascota.url_imagen}}" alt="">
+                </td>
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.edad }}</td>
+                <td>{{ mascota.doc_propietario }} - {{ mascota.propietario }}</td>
+                <td>
+                    <button class="btn btn-warning">Editar</button>
+                    <button class="btn btn-danger" (click)="eliminarMascota(mascota._id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

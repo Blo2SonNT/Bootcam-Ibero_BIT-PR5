@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { RegistroMascotaComponent } from './components/registro-mascota/registro-mascota.component';
+import { ListaRegistroMascotasComponent } from './components/lista-registro-mascotas/lista-registro-mascotas.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { RegistroMascotaComponent } from './components/registro-mascota/registro
         ContactoComponent,
         IngresoComponent,
         RegistroMascotaComponent,
+        ListaRegistroMascotasComponent,
     ],
     imports: [
         BrowserModule,

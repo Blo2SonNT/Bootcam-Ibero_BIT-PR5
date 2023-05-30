@@ -60,7 +60,7 @@ exports.eliminarRegistroMascota = async(req, res) => {
                 res.status(404).send('Mascota no encontrada')
             } else {
                 await Mascotas.findOneAndRemove({ _id: req.params.id })
-                res.status(200).send('Registro de mascota eliminada correctamente')
+                res.status(200).json({ msg: "Registro eliminado" })
             }
         } else {
             res.status(400).send('El identificador de la mascota no es correcto')

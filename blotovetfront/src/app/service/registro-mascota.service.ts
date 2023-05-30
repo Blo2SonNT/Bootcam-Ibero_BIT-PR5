@@ -11,7 +11,26 @@ export class RegistroMascotaService {
 
     constructor(private http:HttpClient) {}
 
+    getRegistrosMascotas(): Observable<any> {
+        return this.http.get(this.urlApi)
+    }
+
     postRegistroMascota(dataMascota:Mascotas): Observable<any>{
         return this.http.post(this.urlApi, dataMascota)
     }
+
+    putRegistroMascota(id:string, dataMascota:Mascotas): Observable<any> {
+        return this.http.put(`${this.urlApi}/${id}`, dataMascota)
+    }
+
+    deleteRegistroMascota(id:string): Observable<any> {
+        return this.http.delete(`${this.urlApi}/${id}`)
+    }
+
+    getRegistroMascota(id:string): Observable<any> {
+        return this.http.get(`${this.urlApi}/${id}`)
+    }
+
+
+
 }
