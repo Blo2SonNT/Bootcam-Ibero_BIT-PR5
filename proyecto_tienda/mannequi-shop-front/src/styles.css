@@ -12,3 +12,7 @@ body {
 .letraTienda {
     font-family: 'tienda';
 }
+
+.temaUsuario * {
+    color: #fff;
+}

@@ -1,5 +1,6 @@
 .boton {
-    padding: 1em 2em;
+    padding: 8px 2em;
+    width: 75%;
     border: none;
     border-radius: 5px;
     font-weight: bold;

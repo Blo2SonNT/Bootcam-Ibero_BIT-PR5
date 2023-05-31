@@ -1,6 +1,16 @@
 .scroll-auto-mq {
     overflow-y: auto;
-    max-height: 85vh;
+    max-height: 82vh;
     max-width: 98%;
     overflow-x: hidden;
+    margin-bottom: 15px;
+}
+
+footer {
+    display: flex;
+    height: 100px;
+}
+
+.pepe {
+    flex: 1;
 }

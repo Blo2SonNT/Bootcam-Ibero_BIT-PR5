@@ -1,11 +1,20 @@
 <app-navbar></app-navbar>
-<section class="row">
-    <div class="col-3">
+<section class="row {{estiloUsuario}}">
+    <div class="col-3 bg-dark">
+        <button (click)="cambiarTemaUsuario()">
+            <label>Cambiar tema</label>
+            <i class="ms-4 fa-solid fa-sun"></i>
+        </button>
         <app-sidebar></app-sidebar>
     </div>
     <div class="col-9">
-        <div class="scroll-auto-mq mt-4">
+        <div class="scroll-auto-mq mt-4 pb-3">
             <router-outlet></router-outlet>
         </div>
     </div>
 </section>
+<footer class="bg-dark">
+    <div class="d-flex justify-content-center align-items-center pepe">
+        <label class="text-white fw-bold">Todos los derechos reservados &copy; {{ year }}</label>
+    </div>
+</footer>
