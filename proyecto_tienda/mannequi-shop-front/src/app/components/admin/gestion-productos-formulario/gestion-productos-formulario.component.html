@@ -1,0 +1,32 @@
+<section>
+    <div class="d-flex justify-content-between my-5">
+        <h1 class="letraTienda">Registro de nuevo producto</h1>
+        <button class="btn btn-dark fw-bold" routerLink="/admin/gestion-productos">Regresar al listado</button>
+    </div>
+    <form>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del producto</label>
+            <input type="text" class="form-control" id="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio del producto</label>
+            <input type="number" class="form-control" id="precio">
+        </div>
+        <div class="mb-3">
+            <label for="imagen" class="form-label">Enlace de la imagen del producto</label>
+            <input type="text" class="form-control" id="imagen">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Categoría del producto</label>
+            <select class="form-select">
+                <option selected disabled>Seleccione una...</option>
+                <option value="busos">Busos</option>
+                <option value="camisas">Camisas</option>
+                <option value="faldas">Faldas</option>
+                <option value="ropa">Ropa intima</option>
+                <option value="gorros">Gorros</option>
+            </select>
+        </div>
+        <button class="btn btn-dark fw-bold w-100" type="submit">Crear producto</button>
+    </form>
+</section>

@@ -1,0 +1,12 @@
+.iconoTD {
+    cursor: pointer;
+    transition: .5s all;
+}
+
+.tdEditar:hover {
+    color: #d8bf34;
+}
+
+.tdEliminar:hover {
+    color: #e63434;
+}

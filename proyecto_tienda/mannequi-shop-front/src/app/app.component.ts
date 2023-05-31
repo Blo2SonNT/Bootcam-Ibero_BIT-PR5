@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
         this.estiloUsuario = localStorage.getItem('estiloPagina')
         if(this.estiloUsuario == null){
             localStorage.setItem('estiloPagina', 'bg-white')
-            this.estiloUsuario = 'bg-white temaUsuario'
+            this.estiloUsuario = 'bg-white'
         }
     }
 

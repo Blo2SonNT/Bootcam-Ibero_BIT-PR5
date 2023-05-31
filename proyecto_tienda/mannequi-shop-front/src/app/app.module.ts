@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductosGrillaComponent } from './components/productos-grilla/productos-grilla.component';
 import { ErrorPagina404Component } from './components/error-pagina404/error-pagina404.component';
+import { GestionProductosFormularioComponent } from './components/admin/gestion-productos-formulario/gestion-productos-formulario.component';
+import { GestionProductosVistaComponent } from './components/admin/gestion-productos-vista/gestion-productos-vista.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ErrorPagina404Component } from './components/error-pagina404/error-pagi
     SidebarComponent,
     ProductosGrillaComponent,
     ErrorPagina404Component,
+    GestionProductosFormularioComponent,
+    GestionProductosVistaComponent,
   ],
   imports: [
     BrowserModule,
