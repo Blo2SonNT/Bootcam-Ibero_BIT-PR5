@@ -6,26 +6,71 @@
     <form>
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre del producto</label>
-            <input type="text" class="form-control" id="nombre">
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+            <div class="{{clasesErrorDiv}}">El nombre del producto es requerido</div>
+            <div class="{{clasesErrorDiv}}">El mínimo de caracteres para el producto es de 5</div>
         </div>
         <div class="mb-3">
             <label for="precio" class="form-label">Precio del producto</label>
             <input type="number" class="form-control" id="precio">
+            <div class="{{clasesErrorDiv}}">El precio del producto es requerido</div>
+            <div class="{{clasesErrorDiv}}">El mínimo de precio para el producto debe de ser mínimo $1000</div>
         </div>
         <div class="mb-3">
             <label for="imagen" class="form-label">Enlace de la imagen del producto</label>
             <input type="text" class="form-control" id="imagen">
+            <div class="{{clasesErrorDiv}}">El enlace de la imagen del producto es requerido</div>
+            <div class="{{clasesErrorDiv}}">El enlace ingresado no es valido</div>
         </div>
         <div class="mb-3">
             <label class="form-label">Categoría del producto</label>
             <select class="form-select">
-                <option selected disabled>Seleccione una...</option>
+                <option selected disabled value="">Seleccione una...</option>
                 <option value="busos">Busos</option>
                 <option value="camisas">Camisas</option>
                 <option value="faldas">Faldas</option>
                 <option value="ropa">Ropa intima</option>
                 <option value="gorros">Gorros</option>
             </select>
+        </div>
+        <div class="{{clasesErrorDiv}}">Por favor seleccione una categoría para el producto</div>
+
+        <div class="d-flex justify-content-between">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="cantidadInventario" id="menos10">
+                <label class="form-check-label" for="menos10">
+                    menos de 10
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="cantidadInventario" id="entre11_20">
+                <label class="form-check-label" for="entre11_20">
+                    entre 11 y 20
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="cantidadInventario" id="entre21_30">
+                <label class="form-check-label" for="entre21_30">
+                    entre 21 y 30
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="cantidadInventario" id="mas31">
+                <label class="form-check-label" for="mas31">
+                    mas de 31
+                </label>
+            </div>
+        </div>
+
+        <div class="form-check form-switch my-4">
+            <input class="form-check-input" type="checkbox" role="switch" id="chkVentaHabilitada">
+            <label class="form-check-label" for="chkVentaHabilitada">Hay existencias para la venta</label>
+        </div>
+        <div class="form-check form-switch my-4">
+            <input class="form-check-input" type="checkbox" role="switch" id="chkProveedor">
+            <label class="form-check-label" for="chkProveedor">Ya esta pago con el proveedor</label>
+        </div>
+        <div class="{{clasesErrorDiv}} text-center">El producto no se puede registrar si no esta pago con el proveedor
         </div>
         <button class="btn btn-dark fw-bold w-100" type="submit">Crear producto</button>
     </form>

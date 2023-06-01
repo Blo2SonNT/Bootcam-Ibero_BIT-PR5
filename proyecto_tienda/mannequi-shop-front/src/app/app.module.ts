@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,21 +14,22 @@ import { GestionProductosFormularioComponent } from './components/admin/gestion-
 import { GestionProductosVistaComponent } from './components/admin/gestion-productos-vista/gestion-productos-vista.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InicioComponent,
-    NavbarComponent,
-    SidebarComponent,
-    ProductosGrillaComponent,
-    ErrorPagina404Component,
-    GestionProductosFormularioComponent,
-    GestionProductosVistaComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        InicioComponent,
+        NavbarComponent,
+        SidebarComponent,
+        ProductosGrillaComponent,
+        ErrorPagina404Component,
+        GestionProductosFormularioComponent,
+        GestionProductosVistaComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
