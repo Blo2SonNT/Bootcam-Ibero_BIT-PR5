@@ -24,4 +24,8 @@ export class GestionProductosFormularioComponent {
         })
     }
 
+    registrarEditarProducto(){
+        console.log(this.productoForm)
+    }
+
 }
