@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,24 +10,24 @@
 
 <body>
     <script>
-        let numeroUsuario = prompt('digite su numero')
+        let numUsuario = prompt("Digite su numero")
 
-        function esPrimo(numero) {
-            if (numero <= 1) {
-                return false;
+        function esPrimo(num) {
+            if (num <= 1) {
+                return 'no es primo'
             }
-
-            // Verificar si el número es divisible por cualquier número menor que él mismo
-            for (let i = 2; i < numero; i++) {
-                if (numero % i === 0) {
-                    return false;
+            let primo = true
+            for (let x = 2; x < num; x++) {
+                if (primo) {
+                    if (num % x === 0) {
+                        primo = false
+                    }
                 }
             }
-
-            return true;
+            (primo) ? alert("es primo"): alert('No es primo')
         }
 
-        console.log(esPrimo(numeroUsuario))
+        esPrimo(numUsuario)
     </script>
 </body>
 

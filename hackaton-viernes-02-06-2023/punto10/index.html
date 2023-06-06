@@ -10,35 +10,40 @@
 
 <body>
     <script>
-        let numero = prompt('Digite un numero')
+        let numeroUsuario = prompt('Digite su numero')
 
-        function listaPrimos(numUsuario) {
-            if (numUsuario <= 1) {
-                console.log('No hay primos');
-                return;
+        function listaPrimos(num) {
+            if (num <= 1) {
+                return 'no es un numero valido'
             }
 
-            let arr_primos = [];
-            for (let x = 2; x < numUsuario; x++) {
-                let esPrimo = true;
+            let listaPrimos = []
 
-                // Verificar si x es divisible por algún número menor que él mismo
-                for (let i = 2; i < x; i++) {
-                    if (x % i === 0) {
-                        esPrimo = false;
-                        break;
-                    }
-                }
-
-                if (esPrimo) {
-                    arr_primos.push(x);
+            for (let x = 2; x < num; x++) {
+                if (esPrimo(x)) {
+                    listaPrimos.push(x)
                 }
             }
-
-            console.log(arr_primos);
+            console.log(listaPrimos)
         }
 
-        listaPrimos(numero)
+
+        function esPrimo(num) {
+            if (num <= 1) {
+                return false
+            }
+            let primo = true
+            for (let x = 2; x < num; x++) {
+                if (primo) {
+                    if (num % x === 0) {
+                        primo = false
+                    }
+                }
+            }
+            return (primo) ? true : false
+        }
+
+        listaPrimos(numeroUsuario)
     </script>
 </body>
 
