@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let palabra = prompt("digite su cadena")
+
+        function contarVocales(cadena) {
+            cadena = cadena.split('')
+            let arr_vocales = ['a', 'e', 'i', 'o', 'u']
+            let cantidad_vocales = 0
+            cadena.forEach(caracter => {
+                if (arr_vocales.indexOf(caracter) != -1) {
+                    cantidad_vocales = cantidad_vocales + 1
+                }
+            });
+            alert("La cantidad de vocales es: " + cantidad_vocales)
+        }
+
+        contarVocales(palabra)
+    </script>
+</body>
+
+</html>

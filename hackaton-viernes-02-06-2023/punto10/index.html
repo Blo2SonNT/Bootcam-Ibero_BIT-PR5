@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numero = prompt('Digite un numero')
+
+        function listaPrimos(numUsuario) {
+            if (numUsuario <= 1) {
+                console.log('No hay primos');
+                return;
+            }
+
+            let arr_primos = [];
+            for (let x = 2; x < numUsuario; x++) {
+                let esPrimo = true;
+
+                // Verificar si x es divisible por algún número menor que él mismo
+                for (let i = 2; i < x; i++) {
+                    if (x % i === 0) {
+                        esPrimo = false;
+                        break;
+                    }
+                }
+
+                if (esPrimo) {
+                    arr_primos.push(x);
+                }
+            }
+
+            console.log(arr_primos);
+        }
+
+        listaPrimos(numero)
+    </script>
+</body>
+
+</html>

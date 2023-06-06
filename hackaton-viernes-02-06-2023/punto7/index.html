@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let frase = prompt('Digite su frase')
+
+        function palabraLarga(fraseUsuario) {
+            fraseUsuario = fraseUsuario.split(" ")
+            let cantidad = 0
+            let palabra_resultado = ''
+            fraseUsuario.forEach(palabra => {
+                if (cantidad < palabra.length) {
+                    palabra_resultado = palabra
+                }
+            });
+
+            alert(palabra_resultado)
+        }
+
+        palabraLarga(frase)
+    </script>
+</body>
+
+</html>

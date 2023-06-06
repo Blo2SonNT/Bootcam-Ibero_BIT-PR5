@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let anagrama1 = prompt("escriba su texto")
+        let anagrama2 = prompt("escriba su texto")
+
+        function esAnagrama(anagramaUsuario1, anagramaUsuario2) {
+            let arr_anagrama1 = anagramaUsuario1.split('')
+            let arr_anagrama2 = anagramaUsuario2.split('')
+
+            let control = true
+            arr_anagrama1.forEach(caracter => {
+                if (control == true) {
+                    if (arr_anagrama2.indexOf(caracter) != -1) {
+                        control = true
+                    } else {
+                        control = false
+                    }
+                }
+            });
+
+
+            if (control) {
+                alert('es anagrama')
+            } else {
+                alert('no es anagrama')
+            }
+
+        }
+
+        esAnagrama(anagrama1, anagrama2)
+    </script>
+</body>
+
+</html>
