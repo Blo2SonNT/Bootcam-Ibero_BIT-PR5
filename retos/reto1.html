@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Escribe una función que tome un número como argumento y calcule la suma de todos los múltiplos de 3 y 5 en el rango de 1 hasta ese número.
+    <script>
+        //cSpell:disable
+        function sumaMultiplos3_5(numeroUsuario) {
+            let multiplos = []
+            for (let x = 1; x <= numeroUsuario; x++) {
+                if (x % 3 == 0) {
+                    multiplos.push(x)
+                }
+                if (x % 5 == 0) {
+                    multiplos.push(x)
+                }
+            }
+            console.log(multiplos)
+
+            let sumaTotal = 0
+            multiplos.forEach(numero => {
+                sumaTotal = sumaTotal + numero
+            });
+
+
+            // for (let y = 0; y < multiplos.length; y++) {
+            //    sumaTotal = sumaTotal + multiplos[y]
+            // }
+
+            alert(`La suma total es: ${sumaTotal}`)
+        }
+
+
+
+        let num = prompt('Digite el numero')
+        sumaMultiplos3_5(num)
+    </script>
+</body>
+
+</html>
