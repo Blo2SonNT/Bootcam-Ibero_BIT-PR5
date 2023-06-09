@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Escribe una función que tome un número como argumento y devuelva el valor correspondiente en la secuencia de Fibonacci. La secuencia de Fibonacci es una serie de números en la que cada número es la suma de los dos números anteriores.
+    </p>
+    <script>
+        //cSpell:disable
+        let numeroUsuario = prompt("Digite el numero maximo de la secuencia de Fibonacci, recuerde que debe ser un numero entero")
+
+        function fibonacci(numMaximo) {
+
+            let secuencia = [1, 1]
+
+            let operacion = 0
+            for (let x = 2; x <= numMaximo; x++) {
+                // if (operacion <= numMaximo) {
+                operacion = secuencia[secuencia.length - 2] + secuencia[secuencia.length - 1]
+                secuencia.push(operacion)
+                    // }
+            }
+
+            console.log(secuencia)
+        }
+
+        fibonacci(numeroUsuario)
+    </script>
+</body>
+
+</html>

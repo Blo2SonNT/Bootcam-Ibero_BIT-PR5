@@ -15,41 +15,18 @@
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let dataP of listaProductos">
             <tr>
-                <td class="align-middle">hoodie Negro</td>
-                <td class="align-middle">$ 150.000</td>
+                <td class="align-middle">{{ dataP.nombre }}</td>
+                <td class="align-middle">{{ dataP.precio | currency: '$'}}</td>
+                <!--  | number:'1.0' -->
                 <td class="align-middle">
-                    <img src="https://via.placeholder.com/40x40" alt="">
+                    <img src="{{ dataP.enlace_img }}" width="40" height="40" alt="">
                 </td>
-                <td class="align-middle">Busos</td>
+                <td class="align-middle">{{dataP.categoria}}</td>
                 <td class="align-middle">
                     <i class="iconoTD tdEditar fa-solid fa-pencil mx-2" routerLink="/admin/formulario-productos"></i>
-                    <i class="iconoTD tdEliminar fa-solid fa-trash-can mx-2"></i>
-                </td>
-            </tr>
-            <tr>
-                <td class="align-middle">Falda floripepiada</td>
-                <td class="align-middle">$ 70.000</td>
-                <td class="align-middle">
-                    <img src="https://via.placeholder.com/40x40" alt="">
-                </td>
-                <td class="align-middle">Faldas</td>
-                <td class="align-middle">
-                    <i class="iconoTD tdEditar fa-solid fa-pencil mx-2" routerLink="/admin/formulario-productos"></i>
-                    <i class="iconoTD tdEliminar fa-solid fa-trash-can mx-2"></i>
-                </td>
-            </tr>
-            <tr>
-                <td class="align-middle">Kukos atrapapedos</td>
-                <td class="align-middle">$ 40.000</td>
-                <td class="align-middle">
-                    <img src="https://via.placeholder.com/40x40" alt="">
-                </td>
-                <td class="align-middle">Ropa intima</td>
-                <td class="align-middle">
-                    <i class="iconoTD tdEditar fa-solid fa-pencil mx-2" routerLink="/admin/formulario-productos"></i>
-                    <i class="iconoTD tdEliminar fa-solid fa-trash-can mx-2"></i>
+                    <i class="iconoTD tdEliminar fa-solid fa-trash-can mx-2" (click)="eliminarProducto(dataP._id)"></i>
                 </td>
             </tr>
         </tbody>
