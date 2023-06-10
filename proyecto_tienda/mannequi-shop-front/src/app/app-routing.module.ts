@@ -11,6 +11,7 @@ const routes: Routes = [
     { path:'productos', component:ProductosGrillaComponent },
     { path:'404-pagina', component:ErrorPagina404Component },
     { path:'admin/formulario-productos', component: GestionProductosFormularioComponent},
+    { path:'admin/editar-producto/:id', component: GestionProductosFormularioComponent},
     { path:'admin/gestion-productos', component:GestionProductosVistaComponent },
     { path:'**', redirectTo:'404-pagina', pathMatch:'full' }
 ];

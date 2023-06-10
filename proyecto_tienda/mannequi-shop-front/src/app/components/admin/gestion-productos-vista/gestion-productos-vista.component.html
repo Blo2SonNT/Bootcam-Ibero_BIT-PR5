@@ -25,7 +25,7 @@
                 </td>
                 <td class="align-middle">{{dataP.categoria}}</td>
                 <td class="align-middle">
-                    <i class="iconoTD tdEditar fa-solid fa-pencil mx-2" routerLink="/admin/formulario-productos"></i>
+                    <i class="iconoTD tdEditar fa-solid fa-pencil mx-2" [routerLink]="['/admin/editar-producto', dataP._id]"></i>
                     <i class="iconoTD tdEliminar fa-solid fa-trash-can mx-2" (click)="eliminarProducto(dataP._id)"></i>
                 </td>
             </tr>
