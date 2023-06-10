@@ -18,7 +18,7 @@ const ProductoSchema = mongoose.Schema({
         required: true
     },
     cantidad_inventario: {
-        type: Number,
+        type: String,
         required: true
     },
     en_venta: {

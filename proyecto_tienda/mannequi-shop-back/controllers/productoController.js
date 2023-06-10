@@ -4,6 +4,7 @@ const Producto = require("../models/Producto")
 exports.crearProducto = async(req, res) => {
     try {
         let dataProducto
+        console.log(req.body)
         dataProducto = new Producto(req.body)
         await dataProducto.save()
         res.send(dataProducto)
