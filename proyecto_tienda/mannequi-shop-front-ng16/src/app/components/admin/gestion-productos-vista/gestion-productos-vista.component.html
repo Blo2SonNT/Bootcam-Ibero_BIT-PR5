@@ -1,0 +1,34 @@
+<section>
+    <div class="d-flex justify-content-between">
+        <h1 class="letraTienda">Listado de productos</h1>
+        <button class="btn btn-dark fw-bold" routerLink="/admin/formulario-productos">Crear producto</button>
+    </div>
+    <hr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let dataP of listaProductos">
+            <tr>
+                <td class="align-middle">{{ dataP.nombre }}</td>
+                <td class="align-middle">{{ dataP.precio | currency: '$'}}</td>
+                <!--  | number:'1.0' -->
+                <td class="align-middle">
+                    <img src="{{ dataP.enlace_img }}" width="40" height="40" alt="">
+                </td>
+                <td class="align-middle">{{dataP.categoria}}</td>
+                <td class="align-middle">
+                    <i class="iconoTD tdEditar fa-solid fa-pencil mx-2" [routerLink]="['/admin/editar-producto', dataP._id]"></i>
+                    <i class="iconoTD tdEliminar fa-solid fa-trash-can mx-2" (click)="eliminarProducto(dataP._id)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

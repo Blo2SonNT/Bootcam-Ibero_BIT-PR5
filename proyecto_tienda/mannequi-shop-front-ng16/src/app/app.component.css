@@ -1,0 +1,17 @@
+.scroll-auto-mq {
+    overflow-y: auto;
+    max-height: 82vh;
+    max-width: 98%;
+    overflow-x: hidden;
+    margin-bottom: 15px;
+}
+
+.contenedor {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    flex: 1;
+}

@@ -4,7 +4,7 @@
     "description": "Este desarrollo es enfocado a la tienda mannequi a la cual se colocaran las peticiones para la gestion de todos sus componentes",
     "main": "index.js",
     "scripts": {
-        "pepe": "nodemon ."
+        "dev": "nodemon ."
     },
     "keywords": [
         "tienda",
@@ -22,6 +22,7 @@
         "cors": "^2.8.5",
         "dotenv": "^16.1.3",
         "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.0",
         "mongoose": "^7.2.2"
     }
 }
