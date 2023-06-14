@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router()
 const productoController = require('../controllers/productoController')
 const usuarioController = require('../controllers/usuarioController')
+const sessionController = require('../controllers/sessionController')
+
+router.post('/ingreso', sessionController.generarToken)
 
 router.get('/productos', productoController.obtenerProductos)
 router.get('/producto/:id', productoController.obtenerProducto)
