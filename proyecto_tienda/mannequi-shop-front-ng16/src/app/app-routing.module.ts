@@ -5,6 +5,7 @@ import { ProductosGrillaComponent } from './components/productos-grilla/producto
 import { ErrorPagina404Component } from './components/error-pagina404/error-pagina404.component';
 import { GestionProductosFormularioComponent } from './components/admin/gestion-productos-formulario/gestion-productos-formulario.component';
 import { GestionProductosVistaComponent } from './components/admin/gestion-productos-vista/gestion-productos-vista.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
     { path:'' , component:InicioComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path:'admin/formulario-productos', component: GestionProductosFormularioComponent},
     { path:'admin/editar-producto/:id', component: GestionProductosFormularioComponent},
     { path:'admin/gestion-productos', component:GestionProductosVistaComponent },
+    { path:'ingreso', component: LoginComponent },
     { path:'**', redirectTo:'404-pagina', pathMatch:'full' }
 ];
 

@@ -1,0 +1,12 @@
+<section class="mt-5 d-flex justify-content-center align-items-center flex-column">
+    <h1 class="letraTienda mb-4">Bienvenido</h1>
+    <form class="w-50" (submit)="ingresoUsuario()">
+        <div class="mb-3 w-100">
+            <input placeholder="Correo" type="email" class="input w-100" [(ngModel)]="user.correo" [ngModelOptions]="{standalone: true}" required="">
+        </div>
+        <div class="mb-3">
+            <input placeholder="Contraseña" type="password" class="input w-100" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" required="">
+        </div>
+        <button class="btn btn-dark fw-bold w-100" type="submit">Ingresar</button>
+    </form>
+</section>
