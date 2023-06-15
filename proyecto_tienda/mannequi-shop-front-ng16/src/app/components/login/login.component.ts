@@ -26,7 +26,7 @@ export class LoginComponent {
                 timer: 3000,
                 showConfirmButton: false
             })
-            this.router.navigate(['/admin/gestion-productos'])
+            this.router.navigate(['/admin'])
         }, err => {
             Swal.fire({
                 icon: 'error',

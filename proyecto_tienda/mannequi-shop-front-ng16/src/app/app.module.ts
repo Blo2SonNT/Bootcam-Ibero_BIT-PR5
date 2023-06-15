@@ -16,6 +16,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { GestionProductosFormularioComponent } from './components/admin/gestion-productos-formulario/gestion-productos-formulario.component';
 import { GestionProductosVistaComponent } from './components/admin/gestion-productos-vista/gestion-productos-vista.component';
 import { LoginComponent } from './components/login/login.component';
+import { ListaUsuariosComponent } from './components/admin/lista-usuarios/lista-usuarios.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './components/login/login.component';
         AdminComponent,
         GestionProductosFormularioComponent,
         GestionProductosVistaComponent,
-        LoginComponent
+        LoginComponent,
+        ListaUsuariosComponent
     ],
     imports: [
         BrowserModule,
