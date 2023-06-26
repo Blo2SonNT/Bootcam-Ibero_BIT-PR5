@@ -1,6 +1,6 @@
 <section>
     <div class="d-flex justify-content-between my-5">
-        <h1 class="letraTienda">Registro de nuevo producto</h1>
+        <h1 class="letraTienda">{{ titulo_formulario }}</h1>
         <button class="btn btn-dark fw-bold" routerLink="/admin/gestion-productos">Regresar al listado</button>
     </div>
     <form [formGroup]="productoForm" (ngSubmit)="registrarEditarProducto()">
@@ -59,6 +59,6 @@
         </div>
         <div class="{{clasesErrorDiv}} text-center" *ngIf="productoForm.get('pago_proveedor')?.hasError('required')">El producto no se puede registrar si no esta pago con el proveedor
         </div>
-        <button class="btn btn-dark fw-bold w-100" type="submit">Crear producto</button>
+        <button class="btn btn-dark fw-bold w-100" type="submit">{{ textoBoton }}</button>
     </form>
 </section>
